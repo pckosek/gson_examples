@@ -4,12 +4,16 @@ import com.google.gson.GsonBuilder;
 public class MyClass {
     public static void main(String args[]) {
         
-        Gson mGson;                             // define the Gson object
-        mGson = new GsonBuilder().create();     // create a gson builder 
+        Gson mGson;                             // declare the Gson object
+        mGson = new GsonBuilder().create();     // instantiate a gson builder 
         
-        dataThing mdataThing;                   // define target object
-        mdataThing = mGson.fromJson("{x:4, myList :[12, 13, 14]}", dataThing.class); // instantiate object from formatting JSON string!!
-        
+        dataThing mdataThing;                   // declare target object
+
+        mdataThing = mGson.fromJson("{x:4, myList :[12, 13, 14]}", dataThing.class);
+                                                // works because we have:
+                                                //  - an int named x 
+                                                //  - an int array named myList 
+
         int y=25;
         int z=mdataThing.x+y;
 

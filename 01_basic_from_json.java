@@ -8,12 +8,22 @@ import com.google.gson.GsonBuilder;
 public class MyClass {
     public static void main(String args[]) {
         
-        Gson mGson;
-        mGson = new GsonBuilder().create();
+        Gson mGson;                             // declare the Gson object
+        mGson = new GsonBuilder().create();     // instantiate a gson builder 
         
-        dataThing mdataThing;
+        dataThing mdataThing;                   // declare target object
+
+         // instantiate object from formatting JSON string!!
         mdataThing = mGson.fromJson("{x:4}", dataThing.class);
-        
+                                                // instantiate a new object from JSON, PROVIDED
+                                                // we have a json string where the :
+                                                //     - field names match those in the class arg , AND
+                                                //     - data types match those in the class arg 
+                                                // 
+                                                // Therefore, this works because we have:
+                                                //  - an int named x 
+
+
         int y=25;
         int z=mdataThing.x+y;
 
